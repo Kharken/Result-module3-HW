@@ -9,6 +9,8 @@
 
 body {
   font-family: common.$primary-font, sans-serif;
+  display: flex;
+  width: 1920px;
 }
 
 h1 {
@@ -18,8 +20,10 @@ h1 {
 }
 
 .container{
-  max-width: 1920px;
+  width: 100%;
+  background-size: cover;
 }
+
 .buttons__container{
   display: flex;
   justify-content: center;
@@ -42,4 +46,13 @@ h1 {
   aspect-ratio: 1 / 1;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.control{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.volume-control {
+  width: 200px;
 }

@@ -3,6 +3,18 @@ import './styles/styles.scss'
 
 const container = document.querySelector('.container');
 const buttonsContainer = document.querySelector('.buttons__container');
+const controlContainer = document.querySelector('.control');
+
+const volumeControl = document.createElement('input');
+volumeControl.type = 'range';
+volumeControl.min = '0';
+volumeControl.max = '1';
+volumeControl.step = '0.1';
+volumeControl.value = '1';
+volumeControl.classList.add('volume-control');
+controlContainer.appendChild(volumeControl);
+
+let currentAudio = null
 
 soundsData.forEach((item) => {
     const buttonContainer = document.createElement('div');
@@ -29,7 +41,6 @@ buttonsContainer.addEventListener('click', (e) => {
     const audio = button.querySelector('audio');
     if (!audio) return;
 
-    // Остановка всех аудио, кроме текущего
     document.querySelectorAll('audio').forEach(a => {
         if (a !== audio) {
             a.pause();
@@ -37,18 +48,26 @@ buttonsContainer.addEventListener('click', (e) => {
         }
     });
 
-    // Управление воспроизведением
     if (audio.paused) {
+        audio.volume = volumeControl.value; // Устанавливаем громкость из регулятора
         audio.play();
+        currentAudio = audio; // Сохраняем текущее аудио
     } else {
         audio.pause();
         audio.currentTime = 0;
+        currentAudio = null;
     }
 
-    // Изменение фона контейнера
     const buttonContainer = button.closest('.button-container');
     if (buttonContainer) {
         const bg = buttonContainer.dataset.background;
         container.style.backgroundImage = `url(${bg})`;
     }
 });
+
+volumeControl.addEventListener('input', (e) => {
+    if (currentAudio) {
+        currentAudio.volume = e.target.value;
+    }
+});
+
