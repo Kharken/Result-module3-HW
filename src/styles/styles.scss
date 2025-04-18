@@ -2,15 +2,44 @@
 @use "mixins";
 @use "common";
 
+@font-face {
+  font-family: "Roboto";
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
 body {
   font-family: common.$primary-font, sans-serif;
 }
 
 h1 {
-  color: #e77037;
-  font-size: 2rem;
+  color: common.$primary-color;
+  font-size: 4rem;
+  text-align: center;
 }
 
 .container{
+  max-width: 1920px;
+}
+.buttons__container{
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
 
+}
+
+.button-container {
+  display: flex;
+  width: 300px;
+  aspect-ratio: 1 / 1;
+}
+
+.button {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  margin: auto;
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
