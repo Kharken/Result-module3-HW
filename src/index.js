@@ -2,7 +2,6 @@ import {soundsData} from './data';
 import './styles/styles.scss'
 
 const container = document.querySelector('.container');
-const contentContainer = document.querySelector('.content__container');
 const buttonsContainer = document.querySelector('.buttons__container');
 const controlContainer = document.querySelector('.control');
 
@@ -33,7 +32,6 @@ soundsData.forEach((item) => {
 
     buttonContainer.appendChild(buttonElement);
     buttonsContainer.appendChild(buttonContainer);
-    // contentContainer.appendChild(buttonsContainer);
 });
 
 buttonsContainer.addEventListener('click', (e) => {
