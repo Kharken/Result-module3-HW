@@ -2,6 +2,7 @@ import {soundsData} from './data';
 import './styles/styles.scss'
 
 const container = document.querySelector('.container');
+const contentContainer = document.querySelector('.content__container');
 const buttonsContainer = document.querySelector('.buttons__container');
 const controlContainer = document.querySelector('.control');
 
@@ -32,6 +33,7 @@ soundsData.forEach((item) => {
 
     buttonContainer.appendChild(buttonElement);
     buttonsContainer.appendChild(buttonContainer);
+    // contentContainer.appendChild(buttonsContainer);
 });
 
 buttonsContainer.addEventListener('click', (e) => {
@@ -49,9 +51,9 @@ buttonsContainer.addEventListener('click', (e) => {
     });
 
     if (audio.paused) {
-        audio.volume = volumeControl.value; // Устанавливаем громкость из регулятора
+        audio.volume = volumeControl.value;
         audio.play();
-        currentAudio = audio; // Сохраняем текущее аудио
+        currentAudio = audio;
     } else {
         audio.pause();
         audio.currentTime = 0;
