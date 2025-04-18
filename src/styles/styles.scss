@@ -1,0 +1,16 @@
+@use "normalize";
+@use "mixins";
+@use "common";
+
+body {
+  font-family: common.$primary-font, sans-serif;
+}
+
+h1 {
+  color: #e77037;
+  font-size: 2rem;
+}
+
+.container{
+
+}
