@@ -1,3 +1,9 @@
+interface ISoundsData {
+    background: string;
+    icon: string;
+    audio: string;
+}
+
 export const soundsData = [
     {
         background: './assets/summer-bg.jpg',
@@ -14,4 +20,4 @@ export const soundsData = [
         icon: './assets/icons/cloud-snow.svg',
         audio: './assets/sounds/winter.mp3',
     },
-]
+] as ISoundsData[];
