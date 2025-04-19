@@ -59,7 +59,7 @@ buttonsContainer.addEventListener('click', (e: Event): void => {
         currentAudio = null;
     }
 
-    const buttonContainer: HTMLDivElement = button.closest('.button-container');
+    const buttonContainer = button.closest('.button-container') as HTMLDivElement;
     if (buttonContainer) {
         const bg = buttonContainer.dataset.background;
         container.style.backgroundImage = `url(${bg})`;
