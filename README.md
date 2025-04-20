@@ -1,10 +1,27 @@
-# Result University
+# Background
+### Result University
 
-## Поток Middle, группа 15
+* Stream Middle
+* Group 15
+* Student - Andreev Yuriy
+* Project - Sounds of Nature
 
-### Студент - Андреев Юрий
+* General - this project - it's a small vanilla Typescript application, which plays some sounds of nature and changes background of page
+* Project objectives - transfer the project made in module 2 into Typescript
+* Features - For pictures and audio to work, you will need to create a special file
 
-### Проект - Sounds of Nature
+# Install
 
-* **Цель проекта** - перевести проект, выполненный в модуле 2 на Typescript
-* **Особенности** - для работы картинок и аудио нужно будет создать специальный файл
+```npm i```
+
+### Run project
+
+```npm run start```
+
+### Development build
+
+```npm run build:dev```
+
+### Production build
+
+```npm run build```
